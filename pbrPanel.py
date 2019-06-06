@@ -32,16 +32,3 @@ class PbrifyInterface(bpy.types.Panel):
         row.scale_y = 2.0
         row.operator("material.pbrify", text="Create PBR Material", text_ctxt="", translate=True, icon='NONE', emboss=True, icon_value=0)
 
-
-# Register
-
-def register():
-    bpy.utils.register_class(PbrifyCreate)
-    bpy.utils.register_class(MyPanel)
-
-def unregister():
-    bpy.utils.unregister_class(PbrifyCreate)
-    bpy.utils.unregister_class(MyPanel)
-
-if __name__ == "__main__":
-    register()
