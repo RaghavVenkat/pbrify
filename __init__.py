@@ -17,9 +17,12 @@ bl_info = {
     "description" : "Quick PBR node setup creator",
     "blender" : (2, 80, 0),
     "version" : (0, 0, 1),
-    "location" : "",
+    "location" : "Properties > Material > Quick PBR Generator: PBRify",
     "warning" : "",
-    "category" : "Material"
+    "category" : "Material",
+    "support": "COMMUNITY",
+    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/",
+    "tracker_url": "https://developer.blender.org/maniphest/task/edit/form/2/",
 }
 
 import bpy
