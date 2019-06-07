@@ -6,7 +6,9 @@ class PbrifyCreate(bpy.types.Operator):
     """Creates a new PBR Material and adds it to the current active object"""
     bl_idname = "material.pbrify"
     bl_label = "PBR Material Creator"
-    
+    bl_description = "Creates a new PBR Material and adds it to the current active object"
+    bl_category = 'pbrify'
+
     def execute(self, context):
         
         # Check engine mode 
