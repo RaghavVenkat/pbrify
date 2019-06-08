@@ -65,7 +65,7 @@ class PbrifyCreate(bpy.types.Operator):
             # linker init
             links = matPBR.node_tree.links
 
-            # if atttributes
+            # Attribute Mapping or  Coordinate Mapping
             if(bpy.context.object.mapNodes==False):
                 txcoordinate = nodes.new(type='ShaderNodeTexCoord')
                 mapping = nodes.new(type='ShaderNodeMapping')
@@ -107,10 +107,26 @@ class PbrifyCreate(bpy.types.Operator):
                 attributeNodeS.parent = mappingFrame
                 attributeNodeN.parent = mappingFrame
 
-            albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])
-            roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
-            specularLink = links.new(specular.outputs[0], bsdf.inputs[5])
-            normalImgLink = links.new(normal.outputs[0], normalMap.inputs[1])
+            # Brightness/Contrast controller
+            if(bpy.context.object.levelControllers == True):
+                bcNodeA = nodes.new(type='ShaderNodeBrightContrast')
+                bcNodeR = nodes.new(type='ShaderNodeBrightContrast')
+                bcNodeS = nodes.new(type='ShaderNodeBrightContrast')
+                bcNodeN = nodes.new(type='ShaderNodeBrightContrast')
+                albedoBCLink = links.new(albedo.outputs[0], bcNodeA.inputs[0])
+                roughnessBCLink = links.new(roughness.outputs[0], bcNodeR.inputs[0])
+                specularBCLink = links.new(specular.outputs[0], bcNodeS.inputs[0])
+                normalImgBCLink = links.new(normal.outputs[0], bcNodeN.inputs[0])
+                bcNodeAbsdfLink = links.new(bcNodeA.outputs[0], bsdf.inputs[0])
+                bcNodeRbsdfLink = links.new(bcNodeR.outputs[0], bsdf.inputs[7])
+                bcNodeSbsdfLink = links.new(bcNodeS.outputs[0], bsdf.inputs[5])
+                bcNodeNnrmLink = links.new(bcNodeN.outputs[0], normalMap.inputs[1])
+            else:
+                albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])
+                roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
+                specularLink = links.new(specular.outputs[0], bsdf.inputs[5])
+                normalImgLink = links.new(normal.outputs[0], normalMap.inputs[1])
+
             normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[17])
             outputLink = links.new(bsdf.outputs[0], materialOutput.inputs[0])
 
