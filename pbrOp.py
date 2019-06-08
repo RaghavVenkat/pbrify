@@ -58,7 +58,7 @@ class PbrifyCreate(bpy.types.Operator):
             specular.location = Vector((albedo.location[0], albedo.location[1] - 250))
             roughness.location = Vector((specular.location[0], specular.location[1] - 250))
             normal.location = Vector((roughness.location[0], roughness.location[1] - 250))
-            normalMap.location = Vector((pbrImageFrame.location[0]+400, pbrImageFrame.location[1]-500))
+            normalMap.location = Vector((pbrImageFrame.location[0]+480, pbrImageFrame.location[1]-650))
             bsdf.location = Vector((pbrImageFrame.location[0]+650, pbrImageFrame.location[1]))
             materialOutput.location = Vector((pbrImageFrame.location[0]+1000, pbrImageFrame.location[1]))
                         
@@ -100,6 +100,7 @@ class PbrifyCreate(bpy.types.Operator):
 
                 # Add Frames
                 mappingFrame = nodes.new(type='NodeFrame')
+                mappingFrame.location = Vector((normalMap.location[0]-50,normalMap.location[1]))
                 mappingFrame.name = 'Mapping'
                 mappingFrame.label = 'Mapping'
                 attributeNodeA.parent = mappingFrame
@@ -121,6 +122,10 @@ class PbrifyCreate(bpy.types.Operator):
                 bcNodeRbsdfLink = links.new(bcNodeR.outputs[0], bsdf.inputs[7])
                 bcNodeSbsdfLink = links.new(bcNodeS.outputs[0], bsdf.inputs[5])
                 bcNodeNnrmLink = links.new(bcNodeN.outputs[0], normalMap.inputs[1])
+                bcNodeA.location = Vector((mappingFrame.location[0]+350, mappingFrame.location[1]))
+                bcNodeR.location = Vector((mappingFrame.location[0]+350, mappingFrame.location[1]-200))
+                bcNodeS.location = Vector((mappingFrame.location[0]+350, mappingFrame.location[1]-400))
+                bcNodeN.location = Vector((mappingFrame.location[0]+300, mappingFrame.location[1]-600))
             else:
                 albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])
                 roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
