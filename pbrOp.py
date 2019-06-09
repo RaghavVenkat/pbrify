@@ -79,6 +79,7 @@ class PbrifyCreate(bpy.types.Operator):
 
                 # Add Frames
                 mappingFrame = nodes.new(type='NodeFrame')
+                mappingFrame.location = Vector((normalMap.location[0]-50,normalMap.location[1]))
                 mappingFrame.name = 'Mapping'
                 mappingFrame.label = 'Mapping'
                 txcoordinate.parent = mappingFrame
@@ -122,10 +123,10 @@ class PbrifyCreate(bpy.types.Operator):
                 bcNodeRbsdfLink = links.new(bcNodeR.outputs[0], bsdf.inputs[7])
                 bcNodeSbsdfLink = links.new(bcNodeS.outputs[0], bsdf.inputs[5])
                 bcNodeNnrmLink = links.new(bcNodeN.outputs[0], normalMap.inputs[1])
-                bcNodeA.location = Vector((mappingFrame.location[0]+350, mappingFrame.location[1]))
-                bcNodeR.location = Vector((mappingFrame.location[0]+350, mappingFrame.location[1]-200))
-                bcNodeS.location = Vector((mappingFrame.location[0]+350, mappingFrame.location[1]-400))
-                bcNodeN.location = Vector((mappingFrame.location[0]+300, mappingFrame.location[1]-600))
+                bcNodeA.location = Vector((bsdf.location[0]-250, bsdf.location[1]))
+                bcNodeR.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-200))
+                bcNodeS.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-400))
+                bcNodeN.location = Vector((bsdf.location[0]-350, bcNodeA.location[1]-600))
             else:
                 albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])
                 roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
