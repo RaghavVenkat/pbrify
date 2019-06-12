@@ -79,7 +79,7 @@ class PbrifyCreate(bpy.types.Operator):
 
                 # Add Frames
                 mappingFrame = nodes.new(type='NodeFrame')
-                mappingFrame.location = Vector((normalMap.location[0]-50,normalMap.location[1]))
+                mappingFrame.location = Vector((normalMap.location[0]-100,normalMap.location[1]))
                 mappingFrame.name = 'Mapping'
                 mappingFrame.label = 'Mapping'
                 txcoordinate.parent = mappingFrame
@@ -108,6 +108,10 @@ class PbrifyCreate(bpy.types.Operator):
                 attributeNodeR.parent = mappingFrame
                 attributeNodeS.parent = mappingFrame
                 attributeNodeN.parent = mappingFrame
+
+            pbrImageFrame.location = Vector((-50.0,0.0))
+            mappingFrame.location = Vector((mappingFrame.location[0]-100,mappingFrame.location[1]))
+            pbrImageFrame.location = Vector((-50,0))
 
             # Brightness/Contrast controller
             if(bpy.context.object.levelControllers == True):
