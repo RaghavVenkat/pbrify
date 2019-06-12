@@ -124,8 +124,8 @@ class PbrifyCreate(bpy.types.Operator):
                 bcNodeSbsdfLink = links.new(bcNodeS.outputs[0], bsdf.inputs[5])
                 bcNodeNnrmLink = links.new(bcNodeN.outputs[0], normalMap.inputs[1])
                 bcNodeA.location = Vector((bsdf.location[0]-250, bsdf.location[1]))
-                bcNodeR.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-200))
-                bcNodeS.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-400))
+                bcNodeR.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-400))
+                bcNodeS.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-200))
                 bcNodeN.location = Vector((bsdf.location[0]-350, bcNodeA.location[1]-600))
             else:
                 albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])

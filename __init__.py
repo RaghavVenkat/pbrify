@@ -14,7 +14,7 @@
 bl_info = {
     "name" : "pbrify",
     "author" : "Raghav Venkat",
-    "description" : "Quick PBR node setup generator",
+    "description" : "Quick PBR node setup Generator",
     "blender" : (2, 80, 0),
     "version" : (0, 0, 1),
     "location" : "Properties > Material > Quick PBR Generator: PBRify",
