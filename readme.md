@@ -2,7 +2,7 @@
 
 One click PBR node setup generator for Blender Cycles Engine.
 
-<img src="./resources/pbrify.jpg">
+<img src="./resource/pbrify.jpg">
 
 
 ## Features
