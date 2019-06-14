@@ -4,9 +4,9 @@ from mathutils import Vector
 # Core Operator Class
 class PbrifyCreate(bpy.types.Operator):
     """Creates a new PBR Material and adds it to the current active object"""
-    bl_idname = "material.pbrify"
-    bl_label = "PBR Material Creator"
-    bl_description = "Creates a new PBR Material and adds it to the current active object"
+    bl_idname = 'material.pbrify'
+    bl_label = 'PBR Material Creator'
+    bl_description = 'Creates a new PBR Material and adds it to the current active object'
     bl_category = 'pbrify'
 
     def execute(self, context):
@@ -90,7 +90,7 @@ class PbrifyCreate(bpy.types.Operator):
                 attributeNodeR = nodes.new(type='ShaderNodeAttribute')
                 attributeNodeS = nodes.new(type='ShaderNodeAttribute')
                 attributeNodeN = nodes.new(type='ShaderNodeAttribute')
-                atrNodeALink = links.new(attributeNodeA.outputs[1],albedo.inputs[0])
+                atrNodeALink = links.new(attributeNodeA.outputs[1],albedo.inputs[0])    
                 atrNodeRLink = links.new(attributeNodeR.outputs[1],roughness.inputs[0])
                 atrNodeSLink = links.new(attributeNodeS.outputs[1],specular.inputs[0])
                 atrNodeNLink = links.new(attributeNodeN.outputs[1],normal.inputs[0])
@@ -141,6 +141,11 @@ class PbrifyCreate(bpy.types.Operator):
             outputLink = links.new(bsdf.outputs[0], materialOutput.inputs[0])
 
             # Append Material
+            bpy.context.object.materialName = bpy.context.object.materialName.lstrip()
+            if not bpy.context.object.materialName:
+                matPBR.name='Unnamed PBR Material'
+            else:
+                matPBR.name = bpy.context.object.materialName
             obj.data.materials.append(matPBR)
 
         else:
