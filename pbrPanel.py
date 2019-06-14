@@ -7,7 +7,7 @@ bpy.types.Object.mapNodes = BoolProperty(name="mapnode", description="Attribute 
 #bpy.types.Object.normalHeights = BoolProperty(name="nomralheights", description="Normal and Heightmap Flag")
 bpy.types.Object.levelControllers = BoolProperty(name="levelcontrollers", description="Adds Brightness and Contrast Nodes for all non color data maps")
 #bpy.types.Object.invertGloss = BoolProperty(name="invertgloss", description="Adds Invert node to support Glossy Maps")
-bpy.types.Object.materialName = bpy.props.StringProperty(name = "PBR Material Name", description = "My description",default = "default")
+bpy.types.Object.materialName = bpy.props.StringProperty(name = "Name", description = "PBR Material Name",default = "PBR Material")
 
 # UI Panel Class
 class PbrifyInterface(bpy.types.Panel):
@@ -32,5 +32,5 @@ class PbrifyInterface(bpy.types.Panel):
 
         row = layout.row()
         row.scale_y = 2.0
-        row.operator('material.pbrify', text='Create PBR Material', text_ctxt='', translate=True, icon='NONE', emboss=True, icon_value=0)
+        row.operator('material.pbrify', text='Click to Create PBR Material', text_ctxt='', translate=True, icon='NONE', emboss=True, icon_value=0)
 

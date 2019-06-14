@@ -20,7 +20,11 @@ class PbrifyCreate(bpy.types.Operator):
             obj = bpy.context.selected_objects[0]
             
             # Material init 
-            matPBR = bpy.data.materials.new(name="PBR Material")
+            bpy.context.object.materialName = bpy.context.object.materialName.lstrip()
+            if not bpy.context.object.materialName:
+                matPBR = bpy.data.materials.new(name='Unnamed PBR Material')
+            else:
+                matPBR = bpy.data.materials.new(name=bpy.context.object.materialName)
             matPBR.use_nodes = True
             nodes = matPBR.node_tree.nodes
 
@@ -141,11 +145,6 @@ class PbrifyCreate(bpy.types.Operator):
             outputLink = links.new(bsdf.outputs[0], materialOutput.inputs[0])
 
             # Append Material
-            bpy.context.object.materialName = bpy.context.object.materialName.lstrip()
-            if not bpy.context.object.materialName:
-                matPBR.name='Unnamed PBR Material'
-            else:
-                matPBR.name = bpy.context.object.materialName
             obj.data.materials.append(matPBR)
 
         else:
