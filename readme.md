@@ -3,7 +3,7 @@
 One click PBR node setup generator for Blender Cycles Engine.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="./broucher.png" width="75%">
+<img src="./release/broucher.png" width="75%">
 
 ## How to install this addon?
 
