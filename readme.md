@@ -9,6 +9,7 @@ One click PBR node setup generator for Blender Cycles Engine.
 
 You can install this addon using any of the following 2 methods:
 <br>
+**Method 1**
     - Goto Edit > Preferences <br>
     - Switch to Addons Tab and Click on Install from File button <br> 
     - Navigate to this addon and select __ init __.py file <br>
