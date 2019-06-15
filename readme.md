@@ -11,7 +11,7 @@ You can install this addon using any of the following 2 methods:
 <br>
     - Goto Edit > Preferences <br>
     - Switch to Addons Tab and Click on Install from File button <br> 
-    - Navigate to this addon and select __init__.py file <br>
+    - Navigate to this addon and select __ init __.py file <br>
     - Enable the addon by checking it on the addons list <br>
 (or)  <br>
     - Extract the addon zip file and then copy that folder and paste it under blender 2.x > Scripts > Addons Folder <br>
