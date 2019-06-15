@@ -21,6 +21,7 @@ class PbrifyCreate(bpy.types.Operator):
             
             # Material init 
             bpy.context.object.materialName = bpy.context.object.materialName.lstrip()
+            bpy.context.object.materialName = bpy.context.object.materialName.rstrip()
             if not bpy.context.object.materialName:
                 matPBR = bpy.data.materials.new(name='Unnamed PBR Material')
             else:
@@ -32,7 +33,7 @@ class PbrifyCreate(bpy.types.Operator):
             for node in nodes:
                 nodes.remove(node)
 
-            # PBR Node Group Creator
+            # PBR Nodes Creator
             albedo = nodes.new(type='ShaderNodeTexImage')
             roughness = nodes.new(type='ShaderNodeTexImage')
             specular = nodes.new(type='ShaderNodeTexImage')
@@ -69,7 +70,7 @@ class PbrifyCreate(bpy.types.Operator):
             # linker init
             links = matPBR.node_tree.links
 
-            # Attribute Mapping or  Coordinate Mapping
+            # Attribute Mapping or Coordinate Mapping
             if(bpy.context.object.mapNodes==False):
                 txcoordinate = nodes.new(type='ShaderNodeTexCoord')
                 mapping = nodes.new(type='ShaderNodeMapping')
@@ -81,7 +82,7 @@ class PbrifyCreate(bpy.types.Operator):
                 txcoordinate.location = Vector((albedo.location[0]-700, albedo.location[1]))
                 mapping.location = Vector((albedo.location[0]-450, albedo.location[1]))
 
-                # Add Frames
+                # Add Frame
                 mappingFrame = nodes.new(type='NodeFrame')
                 mappingFrame.location = Vector((normalMap.location[0]-100,normalMap.location[1]))
                 mappingFrame.name = 'Mapping'
@@ -103,7 +104,7 @@ class PbrifyCreate(bpy.types.Operator):
                 attributeNodeR.location = Vector((albedo.location[0]-450, albedo.location[1]-300))
                 attributeNodeN.location = Vector((albedo.location[0]-450, albedo.location[1]-450))
 
-                # Add Frames
+                # Add Frame
                 mappingFrame = nodes.new(type='NodeFrame')
                 mappingFrame.location = Vector((normalMap.location[0]-50,normalMap.location[1]))
                 mappingFrame.name = 'Mapping'

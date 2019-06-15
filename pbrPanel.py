@@ -1,7 +1,6 @@
 import bpy
 from bpy.props import BoolProperty
 
-
 # Custom Properties
 bpy.types.Object.mapNodes = BoolProperty(name="mapnode", description="Attribute Replacer Flag")
 #bpy.types.Object.normalHeights = BoolProperty(name="nomralheights", description="Normal and Heightmap Flag")
