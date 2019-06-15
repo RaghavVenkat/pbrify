@@ -21,8 +21,8 @@ bl_info = {
     "warning" : "",
     "category" : "Material",
     "support": "COMMUNITY",
-    "wiki_url": "",
-    "tracker_url": "",
+    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/",
+    "tracker_url": "https://developer.blender.org/maniphest/task/edit/form/2/",
 }
 
 import bpy
