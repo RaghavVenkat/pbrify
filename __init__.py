@@ -21,8 +21,8 @@ bl_info = {
     "warning" : "",
     "category" : "Material",
     "support": "COMMUNITY",
-    "wiki_url": "",
-    "tracker_url": "",
+    "wiki_url": "https://github.com/RaghavVenkat/pbrify",
+    "tracker_url": "https://github.com/RaghavVenkat/pbrify/issues"
 }
 
 import bpy
