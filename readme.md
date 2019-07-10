@@ -1,9 +1,13 @@
 # PBRify
 
 One click PBR node setup generator for Blender Cycles Engine.
+<img src="./release/screencast.gif" width="75%">
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="./release/broucher.png" width="75%">
+
+Provides a Panel under materials tab that creates PBR Nodes using the Principled BSDF shader.
 
 ## How to install this addon?
 
