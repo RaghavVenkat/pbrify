@@ -1,6 +1,3 @@
-import bpy
-from mathutils import Vector
-
 # Core Operator Class
 class PbrifyCreate(bpy.types.Operator):
     """Creates a new PBR Material and adds it to the current active object"""
@@ -12,8 +9,14 @@ class PbrifyCreate(bpy.types.Operator):
     def execute(self, context):
         
         # Check engine mode 
-        if(bpy.context.scene.render.engine != 'CYCLES'):
+        if(bpy.context.scene.render.engine == 'EEVEE'):
             bpy.context.scene.render.engine = 'CYCLES'
+		elif(bpy.context.scene.render.engine == 'EEVEE'):
+			bpy.context.scene.render.engine = 'CYCLES'
+		else
+			print('Please use EEVEE or CYCLES engine')
+			return {'CANCELLED'}
+			
 
         # Check object type
         if(bpy.context.selected_objects[0].type == 'MESH'): 
