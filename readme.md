@@ -1,7 +1,8 @@
 # PBRify
 
 One click PBR node setup generator for Blender Cycles Engine.
-<img src="./release/screencast.gif" width="75%">
+
+<img src="./release/py-addon.gif" width="100%">
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
