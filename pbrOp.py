@@ -8,15 +8,14 @@ class PbrifyCreate(bpy.types.Operator):
 
     def execute(self, context):
         
- # Check engine mode 
-        if(bpy.context.scene.render.engine == 'EEVEE'):
-            bpy.context.scene.render.engine = 'EEVEE'
-	elif(bpy.context.scene.render.engine == 'CYCLES'):
-	    bpy.context.scene.render.engine = 'CYCLES'
-	else
-	    print('Please use EEVEE or CYCLES engine')
-	    return {'CANCELLED'}
-			
+        # Check engine mode 
+        if(bpy.context.scene.render.engine == 'BLENDER_EEVEE'):
+            bpy.context.scene.render.engine = 'BLENDER_EEVEE'
+        elif(bpy.context.scene.render.engine == 'CYCLES'):
+            bpy.context.scene.render.engine = 'CYCLES'
+        else:
+            print('Please use EEVEE or CYCLES engine')
+            return {'CANCELLED'}
 
         # Check object type
         if(bpy.context.selected_objects[0].type == 'MESH'): 
