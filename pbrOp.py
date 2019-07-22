@@ -5,18 +5,24 @@ class PbrifyCreate(bpy.types.Operator):
     bl_label = 'PBR Material Creator'
     bl_description = 'Creates a new PBR Material and adds it to the current active object'
     bl_category = 'pbrify'
-    
+
     def execute(self, context):
         
-        notRc = None
+        otRc = None
 
         # Blender version check
         if(bpy.app.version[0] == 2):
             if(bpy.app.version_string[:3] == '2.8'  or bpy.app.version_string[:3] == '2.7'):
-            
+
                 # Check engine mode 
-                if(bpy.context.scene.render.engine != 'CYCLES'):
+                if(bpy.context.scene.render.engine == 'BLENDER_EEVEE'):
+                    bpy.context.scene.render.engine = 'BLENDER_EEVEE'
+                elif(bpy.context.scene.render.engine == 'CYCLES'):
                     bpy.context.scene.render.engine = 'CYCLES'
+                else:
+                    print('Please use EEVEE or CYCLES engine')
+                    return {'CANCELLED'}
+                    
 
                 # Check object type
                 if(bpy.context.selected_objects[0].type == 'MESH'): 
