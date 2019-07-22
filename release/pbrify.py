@@ -19,9 +19,9 @@ from mathutils import Vector
 bl_info = {
     "name" : "pbrify",
     "author" : "Raghav Venkat",
-    "description" : "Quick PBR node setup Generator",
+    "description" : "Quick PBR Node Setup Generator for Blender Cycles and EEVEE Engine",
     "blender" : (2, 80, 0),
-    "version" : (0, 0, 1),
+    "version" : (1 , 0, 0),
     "location" : "Properties > Material > Quick PBR Generator: PBRify",
     "warning" : "",
     "category" : "Material",
