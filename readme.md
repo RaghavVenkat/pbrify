@@ -2,10 +2,11 @@
  > Quick PBR Material Node setup generator for Blender Cycles and EEVEE engine using Principled BSDF shader.
 
 <p align="center">
+ **[Download Now!](https://gumroad.com/iraghavvenkat#lROfO)** 
+ <br>
 <img src="./release/py-addon.gif" width="100%">
 
 
-  **[Download Now!](https://gumroad.com/iraghavvenkat#lROfO)**
 <img src="./release/broucher.png" width="75%">
 </p>
 
