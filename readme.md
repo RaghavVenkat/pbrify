@@ -5,8 +5,9 @@ One click PBR node setup generator for Blender Cycles and EEVEE Engine. **[Downl
 <img src="./release/py-addon.gif" width="100%">
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p align="center">
 <img src="./release/broucher.png" width="75%">
+</p>
 
 Provides a Panel under materials tab that creates PBR Nodes using the Principled BSDF shader.
 
