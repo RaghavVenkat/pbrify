@@ -50,8 +50,8 @@ class PbrifyCreate(bpy.types.Operator):
                     bsdf = nodes.new(type='ShaderNodeBsdfPrincipled')
                     materialOutput = nodes.new(type='ShaderNodeOutputMaterial')
                     
-                    #2.80rc+ version support
-                    if(bpy.app.version_cycle == 'rc'):
+                    #2.80rc+ and release version support
+                    if(bpy.app.version_cycle[:1] == 'r' and bpy.app.version_string[:3] == '2.8'):
                         # Add a dummy image 
                         bpy.ops.image.new()
 
