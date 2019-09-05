@@ -203,7 +203,7 @@ class PbrifyCreate(bpy.types.Operator):
                         specularLink = links.new(specular.outputs[0], bsdf.inputs[5])
                         normalImgLink = links.new(normal.outputs[0], normalMap.inputs[1])
 
-                    normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[17])
+                    normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[19])
                     outputLink = links.new(bsdf.outputs[0], materialOutput.inputs[0])
 
                     # Append Material
