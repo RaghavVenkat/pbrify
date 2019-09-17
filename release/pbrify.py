@@ -202,8 +202,12 @@ class PbrifyCreate(bpy.types.Operator):
                         roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
                         specularLink = links.new(specular.outputs[0], bsdf.inputs[4])
                         normalImgLink = links.new(normal.outputs[0], normalMap.inputs[1])
+                        
+                    if(bpy.app.version_string[:3] == '2.7'):
+                        normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[17])
+                    else if (bpy.app.version_string[:3] == '2.8'):
+                        normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[19])
 
-                    normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[19])
                     outputLink = links.new(bsdf.outputs[0], materialOutput.inputs[0])
 
                     # Append Material
