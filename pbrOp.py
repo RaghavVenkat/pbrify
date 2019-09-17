@@ -165,7 +165,7 @@ class PbrifyCreate(bpy.types.Operator):
                     else:
                         albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])
                         roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
-                        specularLink = links.new(specular.outputs[0], bsdf.inputs[5])
+                        specularLink = links.new(specular.outputs[0], bsdf.inputs[4])
                         normalImgLink = links.new(normal.outputs[0], normalMap.inputs[1])
 
                     normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[17])
