@@ -24,7 +24,7 @@ bl_info = {
     "author" : "Raghav Venkat",
     "description" : "Quick PBR Node Setup Generator for Blender Cycles and EEVEE Engine",
     "blender" : (2, 80, 0),
-    "version" : (1 , 0, 0),
+    "version" : (1 , 1, 0),
     "location" : "Properties > Material > Quick PBR Generator: PBRify",
     "warning" : "",
     "category" : "Material",
