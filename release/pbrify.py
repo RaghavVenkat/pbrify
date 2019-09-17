@@ -205,7 +205,7 @@ class PbrifyCreate(bpy.types.Operator):
                         
                     if(bpy.app.version_string[:3] == '2.7'):
                         normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[17])
-                    else if (bpy.app.version_string[:3] == '2.8'):
+                    if(bpy.app.version_string[:3] == '2.8'):
                         normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[19])
 
                     outputLink = links.new(bsdf.outputs[0], materialOutput.inputs[0])
