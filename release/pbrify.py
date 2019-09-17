@@ -191,7 +191,7 @@ class PbrifyCreate(bpy.types.Operator):
                         normalImgBCLink = links.new(normal.outputs[0], bcNodeN.inputs[0])
                         bcNodeAbsdfLink = links.new(bcNodeA.outputs[0], bsdf.inputs[0])
                         bcNodeRbsdfLink = links.new(bcNodeR.outputs[0], bsdf.inputs[7])
-                        bcNodeSbsdfLink = links.new(bcNodeS.outputs[0], bsdf.inputs[5])
+                        bcNodeSbsdfLink = links.new(bcNodeS.outputs[0], bsdf.inputs[4])
                         bcNodeNnrmLink = links.new(bcNodeN.outputs[0], normalMap.inputs[1])
                         bcNodeA.location = Vector((bsdf.location[0]-250, bsdf.location[1]))
                         bcNodeR.location = Vector((bsdf.location[0]-250, bcNodeA.location[1]-400))
@@ -200,7 +200,7 @@ class PbrifyCreate(bpy.types.Operator):
                     else:
                         albedoLink = links.new(albedo.outputs[0], bsdf.inputs[0])
                         roughnessLink = links.new(roughness.outputs[0], bsdf.inputs[7])
-                        specularLink = links.new(specular.outputs[0], bsdf.inputs[5])
+                        specularLink = links.new(specular.outputs[0], bsdf.inputs[4])
                         normalImgLink = links.new(normal.outputs[0], normalMap.inputs[1])
 
                     normalConverterLink = links.new(normalMap.outputs[0], bsdf.inputs[19])
