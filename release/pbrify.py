@@ -212,6 +212,22 @@ class PbrifyCreate(bpy.types.Operator):
 
                     # Append Material
                     obj.data.materials.append(matPBR)
+                    
+                    # Modify scene settings
+                    render = bpy.context.scene.render
+                    render.resolution_x = 800
+                    render.resolution_y = 480
+                    render.resolution_percentage = 150
+                    render.display_mode = "WINDOW"
+
+                    # Call image editor window
+                    bpy.ops.render.view_show("INVOKE_DEFAULT")
+
+                    # Change area type
+                    bpy.context.window_manager.windows.update()
+                    area = bpy.context.window_manager.windows[-1].screen.areas[0]
+                    area.ui_type = "ShaderNodeTree"
+                    bpy.context.object.active_material_index = len(list(bpy.context.object.material_slots.items()))-1
 
                 else:
                     print('Materials can be applied only on Meshes')
