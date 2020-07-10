@@ -218,7 +218,7 @@ class PbrifyCreate(bpy.types.Operator):
                     render.resolution_x = 800
                     render.resolution_y = 480
                     render.resolution_percentage = 150
-                    render.display_mode = "WINDOW"
+                    # render.display_mode = "WINDOW"
 
                     # Call image editor window
                     bpy.ops.render.view_show("INVOKE_DEFAULT")
