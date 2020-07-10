@@ -14,12 +14,13 @@
 # HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Addon Description
 bl_info = {
     "name" : "pbrify",
     "author" : "Raghav Venkat",
-    "description" : "Quick PBR node setup Generator",
+    "description" : "Quick PBR Node Setup Generator for Blender Cycles and EEVEE Engine",
     "blender" : (2, 80, 0),
-    "version" : (0, 0, 1),
+    "version" : (1 , 1, 0),
     "location" : "Properties > Material > Quick PBR Generator: PBRify",
     "warning" : "",
     "category" : "Material",
